@@ -12,6 +12,10 @@ HTTP_SERVER.use(express.urlencoded({extended:false}))
 const imagePath = path.join(process.cwd(), 'Controller', 'Data', 'Image');
 HTTP_SERVER.use('/api/Data/Image/',express.static(imagePath));
 
+HTTP_SERVER.get('/', (req, res) => {
+    res.send('API is working')
+})
+
 HTTP_SERVER.listen(PORT,()=>{
     console.log(`Server is running on PORT ${PORT}`)
 })
